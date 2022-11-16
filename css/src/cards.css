@@ -57,11 +57,11 @@
 
 dialog::backdrop {
   background-color: var(--color-dark);
-  background-image: url("/images/header01.jpg");
+  background-image: url("/wp-content/themes/digatl-demo/images/header.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-blend-mode: difference;
+  background-blend-mode: soft-light;
 }
 
 dialog {

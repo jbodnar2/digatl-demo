@@ -357,7 +357,7 @@ template {
 
 @font-face {
   font-family: "Figtree";
-  src: url("../../fonts/Figtree-Variable.ttf") format("truetype");
+  src: url("fonts/Figtree-Variable.ttf") format("truetype");
   font-display: swap;
   font-weight: 300 900;
 }
@@ -424,7 +424,7 @@ dialog {
   background-color: hsla(219, 43%, 12%, 1);
 
   background-color: var(--color-dark);
-  background-color: #0039a6;
+
   background-blend-mode: normal;
   /* background-blend-mode: color-dodge; */
   /* background-blend-mode: color-burn; */
@@ -667,11 +667,11 @@ h4 {
 dialog::backdrop {
   background-color: hsla(219, 43%, 12%, 1);
   background-color: var(--color-dark);
-  background-image: url("/images/header01.jpg");
+  background-image: url("/wp-content/themes/digatl-demo/images/header.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-blend-mode: difference;
+  background-blend-mode: soft-light;
 }
 
 dialog {

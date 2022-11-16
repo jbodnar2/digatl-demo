@@ -5,7 +5,7 @@
 
       <div class="card-grid">
         <div class="card flow-content">
-          <img loading="lazy" src="images/atl00.jpg" class="card__image" />
+          <img loading="lazy" src="/wp-content/themes/digatl-demo/images/atl00.jpg" class="card__image" />
           <h3 class="card__title">
             The Sprawling of Atlanta: Visualizing Metropoitan Area Change, 1940s
             to the Present
@@ -88,7 +88,7 @@
         <div class="card flow-content">
           <img
             loading="lazy"
-            src="images/transportation00.jpg"
+            src="wp-content/themes/digatl-demo/images/transportation00.jpg"
             class="card__image"
           />
           <h3 class="card__title">
@@ -186,7 +186,7 @@
           </dl>
         </dialog>
         <div class="card flow-content">
-          <img loading="lazy" src="images/planning00.jpg" class="card__image" />
+          <img loading="lazy" src="wp-content/themes/digatl-demo/images/planning00.jpg" class="card__image" />
           <h3 class="card__title">
             Planning Atlanta - A new City in the Making, 1930s to the 1990s
           </h3>
@@ -285,7 +285,7 @@
         </dialog>
 
         <div class="card flow-content">
-          <img loading="lazy" src="/images/city00.jpg" class="card__image" />
+          <img loading="lazy" src="/wp-content/themes/digatl-demo/images/city00.jpg" class="card__image" />
           <h3 class="card__title">Historic Harlots of Old Atlanta</h3>
           <p class="card__description">
             Did you know that where the Georgia State University Library sits
