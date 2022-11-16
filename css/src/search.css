@@ -1,0 +1,23 @@
+.search {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+
+.search__button {
+  background-color: var(--color-dark);
+  padding: 1em 2em;
+  font-family: inherit;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-light);
+  text-transform: uppercase;
+  color: var(--color-white);
+  border: none;
+}
+
+.search__input {
+  flex: 1 0 max-content;
+  padding: 0.5em 1.25em;
+  border: none;
+  font: inherit;
+}

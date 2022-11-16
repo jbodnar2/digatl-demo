@@ -1,0 +1,35 @@
+.footer {
+  contain: layout;
+  margin-top: 4rem;
+}
+
+.footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.footer__bottom {
+  text-align: center;
+}
+
+.footer__support-button.footer__support-button {
+  padding: 1em;
+  display: block;
+  border: 1px solid currentColor;
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.footer__social-list.footer__social-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 1em;
+  font-size: 2em;
+
+  & a {
+    color: white;
+  }
+}

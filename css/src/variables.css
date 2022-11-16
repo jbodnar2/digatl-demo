@@ -1,0 +1,41 @@
+:root,
+dialog::backdrop,
+dialog {
+  /* ----- Colors ----- */
+  --color-dark: hsl(219 43% 12% / 1);
+  --color-primary: hsl(219 100% 33% / 1);
+  --color-light: hsl(219 11% 45% / 1);
+  --color-lightest: hsl(220 48% 81% / 1);
+
+  --color-accent-primary: hsl(39 100% 51% / 1);
+
+  --color-white: hsl(0 0% 100% / 1);
+  --color-gray-lightest: hsl(240 17% 98% / 1);
+
+  /* ----- Font sizing ----- */
+
+  --fs-h1: 2.488rem;
+  --fs-h2: 2.074rem;
+  --fs-h3: 1.728rem;
+  --fs-h4: 1.44rem;
+  --fs-h4: 1.25rem;
+  --fs-body: 1rem;
+  --fs-small: 0.833rem;
+
+  /* ----- Font family ----- */
+  --ff-sans: "Figtree", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  /* ----- Font weights ----- */
+  --fw-black: 900;
+  --fw-extra-bold: 800;
+  --fw-bold: 700;
+  --fw-semi-bold: 600;
+  --fw-medium: 500;
+  --fw-regular: 400;
+  --fw-light: 300;
+
+  /* ----- Line Heights ----- */
+  --line-height-body: 1.5;
+  --line-height-headings: 1.125;
+}

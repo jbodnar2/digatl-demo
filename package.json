@@ -1,0 +1,27 @@
+{
+  "name": "digatl-demo",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "prettier": "prettier --check ./",
+    "prettier:write": "prettier --write ./",
+    "postcss": "postcss css/main.css --output ./style.css --verbose",
+    "postcss:watch": "postcss css/main.css --output ./style.css --verbose --watch --map"
+  },
+  "prettier": {
+    "semi": true,
+    "printWidth": 80,
+    "bracketSpacing": true,
+    "arrowParens": "always"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "prettier": "^2.7.1",
+    "@prettier/plugin-php": "^0.19.2",
+    "postcss": "^8.4.18",
+    "postcss-cli": "^10.0.0",
+    "postcss-import": "^15.0.0",
+    "postcss-preset-env": "^7.8.2",
+    "autoprefixer": "^10.4.13"
+  }
+}

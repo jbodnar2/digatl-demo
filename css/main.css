@@ -1,0 +1,15 @@
+/* 
+Theme Name: digATL Demo
+Version: 0.0.0
+*/
+
+@import "../node_modules/normalize.css/normalize.css";
+@import "./src/fonts.css";
+@import "./src/variables.css";
+@import "./src/header.css";
+@import "./src/nav.css";
+@import "./src/setup.css";
+@import "./src/utilities.css";
+@import "./src/cards.css";
+@import "./src/search.css";
+@import "./src/footer.css";
