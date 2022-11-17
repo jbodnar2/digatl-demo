@@ -406,6 +406,8 @@ dialog {
 
   /* ----- Spacing ----- */
 
+  --spacer-quarter: 0.25rem;
+  --spacer-half: 0.5rem;
   --spacer-1: 1rem;
   --spacer-2: 2rem;
   --spacer-3: 3rem;
@@ -662,6 +664,11 @@ h4 {
   background-color: var(--color-white);
 }
 
+.card__title {
+  margin-top: 0.5rem;
+  margin-top: var(--spacer-half);
+}
+
 .card__image {
   border: 1px solid hsla(240, 17%, 98%, 1);
   border: 1px solid var(--color-gray-lightest);
@@ -670,6 +677,25 @@ h4 {
   max-width: 100%;
   max-height: 150px;
 }
+
+.card__categories {
+  margin-top: 0.25rem;
+  margin-top: var(--spacer-quarter);
+}
+
+.card__categories > [rel="category tag"] {
+  font-size: 0.75rem;
+  font-size: var(--fs-small);
+  text-decoration: none;
+  color: hsla(219, 11%, 45%, 1);
+  color: var(--color-light);
+}
+
+.card__categories > [rel="category tag"]:hover {
+    text-decoration: underline;
+    text-decoration-color: hsla(39, 100%, 51%, 1);
+    text-decoration-color: var(--color-accent-primary);
+  }
 
 .card__description {
   display: -webkit-box;

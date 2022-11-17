@@ -16,11 +16,30 @@
   background-color: var(--color-white);
 }
 
+.card__title {
+  margin-top: var(--spacer-half);
+}
+
 .card__image {
   border: 1px solid var(--color-gray-lightest);
   object-fit: cover;
   max-width: 100%;
   max-height: 150px;
+}
+
+.card__categories {
+  margin-top: var(--spacer-quarter);
+}
+
+.card__categories > [rel="category tag"] {
+  font-size: var(--fs-small);
+  text-decoration: none;
+  color: var(--color-light);
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent-primary);
+  }
 }
 
 .card__description {

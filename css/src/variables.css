@@ -42,6 +42,8 @@ dialog {
 
   /* ----- Spacing ----- */
 
+  --spacer-quarter: 0.25rem;
+  --spacer-half: 0.5rem;
   --spacer-1: 1rem;
   --spacer-2: 2rem;
   --spacer-3: 3rem;
