@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 1rem;
-  overflow: visible;
   contain: layout;
 }
 
@@ -10,21 +9,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
-  border: 1px solid hsl(0 0% 0% / 0.25);
-  box-shadow: 0px 2px 4px hsl(0 0% 0% / 0.125);
+  padding: var(--spacer-1);
+  border: 1px solid var(--color-gray-lightest);
+  box-shadow: 0px 2px 4px var(--color-box-shadow);
   contain: layout;
   background-color: var(--color-white);
 }
 
 .card__image {
+  border: 1px solid var(--color-gray-lightest);
   object-fit: cover;
   max-width: 100%;
   max-height: 150px;
-}
-
-.card__title {
-  --fs-h3: 1.25rem;
 }
 
 .card__description {
@@ -32,80 +28,4 @@
   overflow: hidden;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-}
-
-.card__info-button {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: var(--fs-small);
-  font-weight: var(--fw-light);
-
-  display: block;
-  text-align: center;
-
-  border: 2px solid var(--color-dark);
-  color: var(--color-white);
-  background-color: var(--color-dark);
-  padding: 1em;
-
-  &:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--color-accent-secondary);
-    text-decoration-thickness: 2px;
-  }
-}
-
-dialog::backdrop {
-  background-color: var(--color-dark);
-  background-image: url("/wp-content/themes/digatl-demo/images/header.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-blend-mode: soft-light;
-}
-
-dialog {
-  color: var(--color-accent-dark);
-}
-
-.dialog__title-link.dialog__title-link {
-  color: var(--color-dark);
-  text-decoration-color: var(--color-base);
-  text-decoration-thickness: 2px;
-}
-
-.dialog__title-link.dialog__title-link:hover {
-  text-decoration-color: var(--color-accent-secondary);
-}
-
-.tags-list {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 0.25em;
-  display: flex;
-  gap: 1em;
-}
-
-.tags-list__link.tags-list__link {
-  display: inline-block;
-  color: var(--color-base);
-  border: 2px solid currentColor;
-  padding: 0.125em 1em;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: var(--fs-small);
-  font-weight: var(--fw-semi-bold);
-}
-
-.tags-list__link.tags-list__link:hover {
-  color: var(--color-accent-secondary);
-}
-
-.dl__title {
-  font-weight: var(--fw-bold);
-}
-
-.category-links {
-  text-transform: uppercase;
-  font-size: var(--fs-small);
 }

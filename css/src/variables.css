@@ -11,6 +11,7 @@ dialog {
 
   --color-white: hsl(0 0% 100% / 1);
   --color-gray-lightest: hsl(240 17% 98% / 1);
+  --color-box-shadow: hsla(0, 0%, 0%, 0.125);
 
   /* ----- Font sizing ----- */
 
@@ -38,4 +39,11 @@ dialog {
   /* ----- Line Heights ----- */
   --line-height-body: 1.5;
   --line-height-headings: 1.0625;
+
+  /* ----- Spacing ----- */
+
+  --spacer-1: 1rem;
+  --spacer-2: 2rem;
+  --spacer-3: 3rem;
+  --spacer-4: 4rem;
 }

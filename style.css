@@ -375,6 +375,7 @@ dialog {
 
   --color-white: hsla(0, 0%, 100%, 1);
   --color-gray-lightest: hsla(240, 17%, 98%, 1);
+  --color-box-shadow: hsla(0, 0%, 0%, 0.125);
 
   /* ----- Font sizing ----- */
 
@@ -402,6 +403,13 @@ dialog {
   /* ----- Line Heights ----- */
   --line-height-body: 1.5;
   --line-height-headings: 1.0625;
+
+  /* ----- Spacing ----- */
+
+  --spacer-1: 1rem;
+  --spacer-2: 2rem;
+  --spacer-3: 3rem;
+  --spacer-4: 4rem;
 }
 
 .header {
@@ -505,7 +513,8 @@ body {
   font-family: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-family: var(--ff-sans);
-  font-size: var(--fs-body);
+  font-size: 1rem;
+  font-size: var(--fs-base);
   line-height: 1.5;
   line-height: var(--line-height-body);
   background-color: hsla(240, 17%, 98%, 1);
@@ -520,45 +529,71 @@ body {
   min-height: 100vh;
 }
 
-.container {
-  margin: 0 auto;
-  width: 99vw;
-  max-width: 1250px;
-  contain: layout;
-}
-
-.footer {
-  background-color: hsla(219, 43%, 12%, 1);
-  background-color: var(--color-dark);
-  color: hsla(0, 0%, 100%, 1);
-  color: var(--color-white);
+:link:not(.nav__link), :visited:not(.nav__link), area[href]:not(.nav__link) {
+  color: hsla(219, 100%, 33%, 1);
+  color: var(--color-primary);
 }
 
 :link:not(.nav__link), :visited:not(.nav__link), area[href]:not(.nav__link) {
-  color: var(--color-base);
+  color: hsla(219, 100%, 33%, 1);
+  color: hsla(219, 100%, 33%, 1);
+  color: var(--color-primary);
+}
+
+:link:not(.nav__link), :visited:not(.nav__link), area[href]:not(.nav__link) {
+  color: hsla(219, 100%, 33%, 1);
+  color: hsla(219, 100%, 33%, 1);
+  color: var(--color-primary);
 }
 
 :-moz-any-link:not(.nav__link) {
-  color: var(--color-base);
+  color: hsla(219, 100%, 33%, 1);
+  color: var(--color-primary);
 }
 
 :any-link:not(.nav__link) {
-  color: var(--color-base);
+  color: hsla(219, 100%, 33%, 1);
+  color: var(--color-primary);
 }
 
 :link:hover, :visited:hover, area[href]:hover {
-  text-decoration-color: var(--color-accent-secondary);
+  text-decoration-color: hsla(39, 100%, 51%, 1);
+  text-decoration-color: var(--color-accent-primary);
+  text-decoration-thickness: 2px;
+}
+
+:link:hover, :visited:hover, area[href]:hover {
+  text-decoration-color: hsla(39, 100%, 51%, 1);
+  text-decoration-color: hsla(39, 100%, 51%, 1);
+  text-decoration-color: var(--color-accent-primary);
+  text-decoration-thickness: 2px;
+}
+
+:link:hover, :visited:hover, area[href]:hover {
+  text-decoration-color: hsla(39, 100%, 51%, 1);
+  text-decoration-color: hsla(39, 100%, 51%, 1);
+  text-decoration-color: var(--color-accent-primary);
   text-decoration-thickness: 2px;
 }
 
 :-moz-any-link:hover {
-  text-decoration-color: var(--color-accent-secondary);
+  text-decoration-color: hsla(39, 100%, 51%, 1);
+  text-decoration-color: var(--color-accent-primary);
   text-decoration-thickness: 2px;
 }
 
 :any-link:hover {
-  text-decoration-color: var(--color-accent-secondary);
+  text-decoration-color: hsla(39, 100%, 51%, 1);
+  text-decoration-color: var(--color-accent-primary);
   text-decoration-thickness: 2px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.0625;
+  line-height: var(--line-height-headings);
 }
 
 h1 {
@@ -576,8 +611,6 @@ h2 {
 h3 {
   font-size: 1.25rem;
   font-size: var(--fs-h3);
-  line-height: 1.0625;
-  line-height: var(--line-height-headings);
 }
 
 h4 {
@@ -597,12 +630,20 @@ h4 {
   margin-top: 1rem;
 }
 
+/* Use to constrain width of main content areas */
+
+.container {
+  margin: 0 auto;
+  width: 99vw;
+  max-width: 1250px;
+  contain: layout;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 1rem;
   gap: 1rem;
-  overflow: visible;
   contain: layout;
 }
 
@@ -611,22 +652,23 @@ h4 {
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
-  border: 1px solid hsla(0, 0%, 0%, 0.25);
+  padding: var(--spacer-1);
+  border: 1px solid hsla(240, 17%, 98%, 1);
+  border: 1px solid var(--color-gray-lightest);
   box-shadow: 0px 2px 4px hsla(0, 0%, 0%, 0.125);
+  box-shadow: 0px 2px 4px var(--color-box-shadow);
   contain: layout;
   background-color: hsla(0, 0%, 100%, 1);
   background-color: var(--color-white);
 }
 
 .card__image {
+  border: 1px solid hsla(240, 17%, 98%, 1);
+  border: 1px solid var(--color-gray-lightest);
   -o-object-fit: cover;
      object-fit: cover;
   max-width: 100%;
   max-height: 150px;
-}
-
-.card__title {
-  --fs-h3: 1.25rem;
 }
 
 .card__description {
@@ -634,94 +676,6 @@ h4 {
   overflow: hidden;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-}
-
-.card__info-button {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  font-size: var(--fs-small);
-  font-weight: 300;
-  font-weight: var(--fw-light);
-
-  display: block;
-  text-align: center;
-
-  border: 2px solid hsla(219, 43%, 12%, 1);
-
-  border: 2px solid var(--color-dark);
-  color: hsla(0, 0%, 100%, 1);
-  color: var(--color-white);
-  background-color: hsla(219, 43%, 12%, 1);
-  background-color: var(--color-dark);
-  padding: 1em;
-}
-
-.card__info-button:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--color-accent-secondary);
-    text-decoration-thickness: 2px;
-  }
-
-dialog::backdrop {
-  background-color: hsla(219, 43%, 12%, 1);
-  background-color: var(--color-dark);
-  background-image: url("/wp-content/themes/digatl-demo/images/header.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-blend-mode: soft-light;
-}
-
-dialog {
-  color: var(--color-accent-dark);
-}
-
-.dialog__title-link.dialog__title-link {
-  color: hsla(219, 43%, 12%, 1);
-  color: var(--color-dark);
-  text-decoration-color: var(--color-base);
-  text-decoration-thickness: 2px;
-}
-
-.dialog__title-link.dialog__title-link:hover {
-  text-decoration-color: var(--color-accent-secondary);
-}
-
-.tags-list {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 0.25em;
-  display: flex;
-  gap: 1em;
-}
-
-.tags-list__link.tags-list__link {
-  display: inline-block;
-  color: var(--color-base);
-  border: 2px solid currentColor;
-  padding: 0.125em 1em;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  font-size: var(--fs-small);
-  font-weight: 600;
-  font-weight: var(--fw-semi-bold);
-}
-
-.tags-list__link.tags-list__link:hover {
-  color: var(--color-accent-secondary);
-}
-
-.dl__title {
-  font-weight: 700;
-  font-weight: var(--fw-bold);
-}
-
-.category-links {
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  font-size: var(--fs-small);
 }
 
 .search {
@@ -753,8 +707,13 @@ dialog {
 }
 
 .footer {
+  background-color: hsla(219, 43%, 12%, 1);
+  background-color: var(--color-dark);
+  color: hsla(0, 0%, 100%, 1);
+  color: var(--color-white);
   contain: layout;
   margin-top: 4rem;
+  margin-top: var(--spacer-4);
 }
 
 .footer__top {
@@ -775,6 +734,7 @@ dialog {
   color: hsla(0, 0%, 100%, 1);
   color: var(--color-white);
   text-decoration: none;
+  text-align: center;
 }
 
 .footer__social-list.footer__social-list {
@@ -788,3 +748,15 @@ dialog {
 .footer__social-list.footer__social-list a {
     color: white;
   }
+
+/* ----- dialog.css ----- */
+
+dialog::backdrop {
+  background-color: hsla(219, 43%, 12%, 1);
+  background-color: var(--color-dark);
+  background-image: url("/wp-content/themes/digatl-demo/images/header.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
+}

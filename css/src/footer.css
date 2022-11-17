@@ -1,6 +1,8 @@
 .footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
   contain: layout;
-  margin-top: 4rem;
+  margin-top: var(--spacer-4);
 }
 
 .footer__top {
@@ -20,6 +22,7 @@
   border: 1px solid currentColor;
   color: var(--color-white);
   text-decoration: none;
+  text-align: center;
 }
 
 .footer__social-list.footer__social-list {

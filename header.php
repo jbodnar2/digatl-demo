@@ -18,7 +18,7 @@
         <p class="header__tagline">
           Projects, collections, and data about the metro area produced by
           Georgia State University faculty, staff, and students working with and
-          within their local comunities
+          within their comunities
         </p>
 
         <form action="/" method="get" class="search">

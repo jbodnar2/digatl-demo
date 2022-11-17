@@ -17,6 +17,7 @@
             consectetur adipisicing elit. Hic harum fugit pariatur.
           </p>
 
+          
           <button class="card__info-button" data-dialog="dialog01">
             More Information
           </button>

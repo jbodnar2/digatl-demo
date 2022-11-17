@@ -8,3 +8,11 @@
 .flow-content > * + * {
   margin-top: 1rem;
 }
+
+/* Use to constrain width of main content areas */
+.container {
+  margin: 0 auto;
+  width: 99vw;
+  max-width: 1250px;
+  contain: layout;
+}
