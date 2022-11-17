@@ -378,13 +378,13 @@ dialog {
 
   /* ----- Font sizing ----- */
 
-  --fs-h1: 2.488rem;
-  --fs-h2: 2.074rem;
-  --fs-h3: 1.728rem;
-  --fs-h4: 1.44rem;
-  --fs-h4: 1.25rem;
-  --fs-body: 1rem;
-  --fs-small: 0.833rem;
+  --fs-h1: 3rem; /* Use for site title */
+  --fs-h2: 2.5rem; /* Use for page heading*/
+  --fs-h3: 1.25rem; /* Use for card titles */
+  --fs-h4: 1.125rem; /* Use for site tagline */
+
+  --fs-base: 1rem; /* Use for body font, assume 16px */
+  --fs-small: 0.75rem; /* Use for card tags, category listings */
 
   /* ----- Font family ----- */
   --ff-sans: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
@@ -401,7 +401,7 @@ dialog {
 
   /* ----- Line Heights ----- */
   --line-height-body: 1.5;
-  --line-height-headings: 1.125;
+  --line-height-headings: 1.0625;
 }
 
 .header {
@@ -472,7 +472,7 @@ dialog {
   padding: 1em;
   color: hsla(0, 0%, 100%, 1);
   color: var(--color-white);
-  font-size: 0.833rem;
+  font-size: 0.75rem;
   font-size: var(--fs-small);
   font-weight: 300;
   font-weight: var(--fw-light);
@@ -505,7 +505,6 @@ body {
   font-family: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-family: var(--ff-sans);
-  font-size: 1rem;
   font-size: var(--fs-body);
   line-height: 1.5;
   line-height: var(--line-height-body);
@@ -563,26 +562,26 @@ body {
 }
 
 h1 {
-  font-size: 2.488rem;
+  font-size: 3rem;
   font-size: var(--fs-h1);
 }
 
 h2 {
-  font-size: 2.074rem;
+  font-size: 2.5rem;
   font-size: var(--fs-h2);
   font-weight: 300;
   font-weight: var(--fw-light);
 }
 
 h3 {
-  font-size: 1.728rem;
+  font-size: 1.25rem;
   font-size: var(--fs-h3);
-  line-height: 1.125;
+  line-height: 1.0625;
   line-height: var(--line-height-headings);
 }
 
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-size: var(--fs-h4);
 }
 
@@ -640,7 +639,7 @@ h4 {
 .card__info-button {
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 0.833rem;
+  font-size: 0.75rem;
   font-size: var(--fs-small);
   font-weight: 300;
   font-weight: var(--fw-light);
@@ -704,7 +703,7 @@ dialog {
   padding: 0.125em 1em;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 0.833rem;
+  font-size: 0.75rem;
   font-size: var(--fs-small);
   font-weight: 600;
   font-weight: var(--fw-semi-bold);
@@ -721,7 +720,7 @@ dialog {
 
 .category-links {
   text-transform: uppercase;
-  font-size: 0.833rem;
+  font-size: 0.75rem;
   font-size: var(--fs-small);
 }
 
@@ -736,7 +735,7 @@ dialog {
   background-color: var(--color-dark);
   padding: 1em 2em;
   font-family: inherit;
-  font-size: 0.833rem;
+  font-size: 0.75rem;
   font-size: var(--fs-small);
   font-weight: 300;
   font-weight: var(--fw-light);
