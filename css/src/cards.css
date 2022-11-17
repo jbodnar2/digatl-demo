@@ -31,7 +31,8 @@
   margin-top: var(--spacer-quarter);
 }
 
-.card__categories > [rel="category tag"] {
+.card__categories > [rel="category tag"],
+.card__tags {
   font-size: var(--fs-small);
   text-decoration: none;
   color: var(--color-light);

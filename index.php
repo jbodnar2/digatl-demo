@@ -23,6 +23,12 @@
       </p>
 
 
+      <div class="card__tags">
+
+      <?php the_tags("", ", ", ""); ?>
+      </div>
+
+
       <div class="flow-content">
         <a style="display: block;" href="/" class="card__resource-link">Visit Resource Online</a>
 

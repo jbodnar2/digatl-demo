@@ -683,7 +683,8 @@ h4 {
   margin-top: var(--spacer-quarter);
 }
 
-.card__categories > [rel="category tag"] {
+.card__categories > [rel="category tag"],
+.card__tags {
   font-size: 0.75rem;
   font-size: var(--fs-small);
   text-decoration: none;
@@ -691,7 +692,7 @@ h4 {
   color: var(--color-light);
 }
 
-.card__categories > [rel="category tag"]:hover {
+.card__categories > [rel="category tag"]:hover, .card__tags:hover {
     text-decoration: underline;
     text-decoration-color: hsla(39, 100%, 51%, 1);
     text-decoration-color: var(--color-accent-primary);

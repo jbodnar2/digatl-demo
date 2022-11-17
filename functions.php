@@ -7,11 +7,13 @@ function digatl_theme_support()
     add_theme_support("title-tag");
 }
 
-function add_categories_to_pages()
+add_action("init", "add_categories_tags_to_pages");
+
+function add_categories_tags_to_pages()
 {
     register_taxonomy_for_object_type("category", "page");
+    register_taxonomy_for_object_type("post_tag", "page");
 }
-add_action("init", "add_categories_to_pages");
 
 add_action("wp_enqueue_scripts", "digatl_enqueue_scripts");
 
