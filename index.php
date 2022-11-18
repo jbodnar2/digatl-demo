@@ -5,14 +5,34 @@
 
   <div class="card-grid">
 
+
+ <?php
+ $temp = $wp_query;
+ $wp_query = null;
+ $wp_query = new WP_Query();
+ $wp_query->query("showposts=2&post_type=resource" . "&paged=" . $paged);
+ while ($wp_query->have_posts()):
+     $wp_query->the_post();
+     the_title();
+     echo "<br>";
+ endwhile;
+
+ previous_posts_link("NEW");
+ next_posts_link("OLD");
+
+ $wp_query = null;
+ $wp_query = $temp;
+ ?> 
+
     <?php
-    $params = ["post_type" => "resource", "posts_per_page" => 9];
-    $query = new WP_Query($params);
+    $temp = $wp_query;
+    $wp_query = null;
+    $wp_query = new WP_Query();
+    $wp_query->query("showposts=9&post_type=resource" . "&paged=" . $paged);
+    if ($wp_query->have_posts()):
+        while ($wp_query->have_posts()):
 
-    if ($query->have_posts()):
-        while ($query->have_posts()):
-
-            $query->the_post();
+            $wp_query->the_post();
 
             $resource_id = get_the_ID();
 
@@ -102,12 +122,19 @@
     <?php
         endwhile;
     endif;
-
-    wp_reset_postdata();
     ?>
+  </div>
 
-    
+  <div>
+  <?php
+  previous_posts_link("Previous");
+  next_posts_link("Next");
 
+  $wp_query = null;
+  $wp_query = $temp;
+
+  wp_reset_postdata();
+  ?>
   </div>
 
   
