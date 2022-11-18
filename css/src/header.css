@@ -5,13 +5,15 @@
   color: var(--color-white);
   text-shadow: 1px 2px 4px hsl(0 0% 0% / 0.25);
 
-  background-image: url("images/header.jpg");
+  /* background-image: url("images/header.jpg"); */
+  /* background-image: url("https://source.unsplash.com/random/1500x500/?digital"); */
+  background-image: url("https://source.unsplash.com/random/1200x600/?atlanta");
   background-repeat: no-repeat;
   background-size: cover;
 
   background-position: top left;
 
-  background-color: var(--color-dark);
+  background-color: var(--color-primary);
 
   background-blend-mode: normal;
   /* background-blend-mode: color-dodge; */
@@ -29,6 +31,10 @@
 .header__title {
   /* font-size: var(--fs-h1); */
   line-height: 1.25;
+  & a {
+    text-decoration: none;
+    color: var(--color-white);
+  }
 }
 
 .header__tagline {

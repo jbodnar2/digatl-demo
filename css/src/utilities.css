@@ -6,7 +6,7 @@
 }
 
 .flow-content > * + * {
-  margin-top: 1rem;
+  margin-top: var(--spacer-1);
 }
 
 /* Use to constrain width of main content areas */

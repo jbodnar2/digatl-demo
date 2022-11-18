@@ -1,9 +1,10 @@
 /* ----- dialog.css ----- */
 dialog::backdrop {
   background-color: var(--color-dark);
-  background-image: url("/wp-content/themes/digatl-demo/images/header.jpg");
+  opacity: 0.9;
+  /* background-image: url("https://source.unsplash.com/random/?digital"); */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-blend-mode: soft-light;
+  background-blend-mode: overlay;
 }

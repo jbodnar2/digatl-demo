@@ -414,54 +414,6 @@ dialog {
   --spacer-4: 4rem;
 }
 
-.header {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  place-items: center;
-
-  color: hsla(0, 0%, 100%, 1);
-
-  color: var(--color-white);
-  text-shadow: 1px 2px 4px hsla(0, 0%, 0%, 0.25);
-
-  background-image: url("images/header.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  background-position: top left;
-
-  background-color: hsla(219, 43%, 12%, 1);
-
-  background-color: var(--color-dark);
-
-  background-blend-mode: normal;
-  /* background-blend-mode: color-dodge; */
-  /* background-blend-mode: color-burn; */
-  /* background-blend-mode: overlay; */
-  /* background-blend-mode: luminosity; */
-  /* background-blend-mode: hard-light; */
-  background-blend-mode: soft-light;
-  /* background-blend-mode: multiply; */
-  /* background-blend-mode: difference; */
-  /* background-blend-mode: hue; */
-  /* background-blend-mode: color; */
-}
-
-.header__title {
-  /* font-size: var(--fs-h1); */
-  line-height: 1.25;
-}
-
-.header__tagline {
-  line-height: 1.25;
-}
-
-.header__title--accent-text {
-  color: hsla(39, 100%, 51%, 1);
-  color: var(--color-accent-primary);
-}
-
 .nav {
   background-color: hsla(219, 43%, 12%, 1);
   background-color: var(--color-dark);
@@ -531,63 +483,9 @@ body {
   min-height: 100vh;
 }
 
-:link:not(.nav__link), :visited:not(.nav__link), area[href]:not(.nav__link) {
+a {
   color: hsla(219, 100%, 33%, 1);
   color: var(--color-primary);
-}
-
-:link:not(.nav__link), :visited:not(.nav__link), area[href]:not(.nav__link) {
-  color: hsla(219, 100%, 33%, 1);
-  color: hsla(219, 100%, 33%, 1);
-  color: var(--color-primary);
-}
-
-:link:not(.nav__link), :visited:not(.nav__link), area[href]:not(.nav__link) {
-  color: hsla(219, 100%, 33%, 1);
-  color: hsla(219, 100%, 33%, 1);
-  color: var(--color-primary);
-}
-
-:-moz-any-link:not(.nav__link) {
-  color: hsla(219, 100%, 33%, 1);
-  color: var(--color-primary);
-}
-
-:any-link:not(.nav__link) {
-  color: hsla(219, 100%, 33%, 1);
-  color: var(--color-primary);
-}
-
-:link:hover, :visited:hover, area[href]:hover {
-  text-decoration-color: hsla(39, 100%, 51%, 1);
-  text-decoration-color: var(--color-accent-primary);
-  text-decoration-thickness: 2px;
-}
-
-:link:hover, :visited:hover, area[href]:hover {
-  text-decoration-color: hsla(39, 100%, 51%, 1);
-  text-decoration-color: hsla(39, 100%, 51%, 1);
-  text-decoration-color: var(--color-accent-primary);
-  text-decoration-thickness: 2px;
-}
-
-:link:hover, :visited:hover, area[href]:hover {
-  text-decoration-color: hsla(39, 100%, 51%, 1);
-  text-decoration-color: hsla(39, 100%, 51%, 1);
-  text-decoration-color: var(--color-accent-primary);
-  text-decoration-thickness: 2px;
-}
-
-:-moz-any-link:hover {
-  text-decoration-color: hsla(39, 100%, 51%, 1);
-  text-decoration-color: var(--color-accent-primary);
-  text-decoration-thickness: 2px;
-}
-
-:any-link:hover {
-  text-decoration-color: hsla(39, 100%, 51%, 1);
-  text-decoration-color: var(--color-accent-primary);
-  text-decoration-thickness: 2px;
 }
 
 h1,
@@ -630,6 +528,7 @@ h4 {
 
 .flow-content > * + * {
   margin-top: 1rem;
+  margin-top: var(--spacer-1);
 }
 
 /* Use to constrain width of main content areas */
@@ -665,8 +564,7 @@ h4 {
 }
 
 .card__title {
-  margin-top: 0.5rem;
-  margin-top: var(--spacer-half);
+  /* margin-top: var(--spacer-half); */
 }
 
 .card__image {
@@ -674,6 +572,7 @@ h4 {
   border: 1px solid var(--color-gray-lightest);
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
   max-width: 100%;
   max-height: 150px;
 }
@@ -683,8 +582,8 @@ h4 {
   margin-top: var(--spacer-quarter);
 }
 
-.card__categories > [rel="category tag"],
-.card__tags > a[rel="tag"] {
+.card__categories a,
+.card__tags a {
   font-size: 0.875rem;
   font-size: var(--fs-small);
   color: hsla(219, 11%, 45%, 1);
@@ -692,11 +591,11 @@ h4 {
   text-decoration: none;
 }
 
-.card__categories > [rel="category tag"]:hover, .card__tags > a[rel="tag"]:hover {
+.card__categories a:hover, .card__tags a:hover {
     text-decoration: underline;
     text-decoration-color: hsla(39, 100%, 51%, 1);
     text-decoration-color: var(--color-accent-primary);
-    text-decoration-thickness: 1px;
+    text-decoration-thickness: 2px;
   }
 
 .card__description {
@@ -714,7 +613,25 @@ h4 {
   display: block;
 }
 
-.button.button,
+.card__info-button {
+  border: none;
+  padding: 0;
+  color: hsla(219, 100%, 33%, 1);
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
+.card__info-button:hover {
+    color: hsla(219, 100%, 33%, 1);
+    color: var(--color-primary);
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: currentColor;
+  }
+
+.button,
 button {
   display: inline-block;
   border: 1px solid currentColor;
@@ -731,12 +648,16 @@ button {
   background-color: var(--color-white);
 }
 
-.button.button:hover, button:hover {
+.button:hover, button:hover {
     background-color: hsla(219, 43%, 12%, 1);
     background-color: var(--color-dark);
     color: hsla(0, 0%, 100%, 1);
     color: var(--color-white);
   }
+
+.button--block {
+  display: block;
+}
 
 .search {
   display: flex;
@@ -828,9 +749,66 @@ button {
 dialog::backdrop {
   background-color: hsla(219, 43%, 12%, 1);
   background-color: var(--color-dark);
-  background-image: url("/wp-content/themes/digatl-demo/images/header.jpg");
+  opacity: 0.9;
+  /* background-image: url("https://source.unsplash.com/random/?digital"); */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
+
+.header {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  place-items: center;
+
+  color: hsla(0, 0%, 100%, 1);
+
+  color: var(--color-white);
+  text-shadow: 1px 2px 4px hsla(0, 0%, 0%, 0.25);
+
+  /* background-image: url("images/header.jpg"); */
+  /* background-image: url("https://source.unsplash.com/random/1500x500/?digital"); */
+  background-image: url("https://source.unsplash.com/random/1200x600/?atlanta");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-position: top left;
+
+  background-color: hsla(219, 100%, 33%, 1);
+
+  background-color: var(--color-primary);
+
+  background-blend-mode: normal;
+  /* background-blend-mode: color-dodge; */
+  /* background-blend-mode: color-burn; */
+  /* background-blend-mode: overlay; */
+  /* background-blend-mode: luminosity; */
+  /* background-blend-mode: hard-light; */
   background-blend-mode: soft-light;
+  /* background-blend-mode: multiply; */
+  /* background-blend-mode: difference; */
+  /* background-blend-mode: hue; */
+  /* background-blend-mode: color; */
+}
+
+.header__title {
+  /* font-size: var(--fs-h1); */
+  line-height: 1.25;
+}
+
+.header__title a {
+    text-decoration: none;
+    color: hsla(0, 0%, 100%, 1);
+    color: var(--color-white);
+  }
+
+.header__tagline {
+  line-height: 1.25;
+}
+
+.header__title--accent-text {
+  color: hsla(39, 100%, 51%, 1);
+  color: var(--color-accent-primary);
 }

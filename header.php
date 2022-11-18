@@ -12,8 +12,7 @@
     <header class="header" aria-label="site">
       <div class="container flow-content">
         <h1 class="header__title">
-          <span class="header__title--accent-text">digATL</span> | The Digital
-          Atlanta Portal
+          <a href="/"><span class="header__title--accent-text">digATL</span> | The Digital Atlanta Portal</a>
         </h1>
         <p class="header__tagline">
           Projects, collections, and data about the metro area produced by
@@ -38,19 +37,19 @@
     <nav class="nav" aria-label="primary">
       <ul class="nav__list container">
         <li class="nav__list-item">
-          <a href="#" class="nav__link nav__link--active">All Resources</a>
+          <a href="/" class="nav__link nav__link--active">All Resources</a>
         </li>
         <li class="nav__list-item">
-          <a href="#" class="nav__link">Advocacy & Social Change</a>
+          <a href="/" class="nav__link">Advocacy & Social Change</a>
         </li>
         <li class="nav__list-item">
-          <a href="#" class="nav__link">Environment & Health</a>
+          <a href="/" class="nav__link">Environment & Health</a>
         </li>
         <li class="nav__list-item">
-          <a href="#" class="nav__link">History, Arts & Culture</a>
+          <a href="/" class="nav__link">History, Arts & Culture</a>
         </li>
         <li class="nav__list-item">
-          <a href="#" class="nav__link">Policy & Planning</a>
+          <a href="/" class="nav__link">Policy & Planning</a>
         </li>
       </ul>
     </nav>

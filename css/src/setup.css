@@ -18,13 +18,8 @@ body {
   min-height: 100vh;
 }
 
-:any-link:not(.nav__link) {
+a {
   color: var(--color-primary);
-}
-
-:any-link:hover {
-  text-decoration-color: var(--color-accent-primary);
-  text-decoration-thickness: 2px;
 }
 
 h1,
