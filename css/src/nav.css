@@ -15,7 +15,7 @@
 .nav__link {
   display: inline-block;
   padding: 1em;
-  color: var(--color-white);
+  color: var(--color-gray-lightest);
   font-size: var(--fs-small);
   font-weight: var(--fw-light);
   text-decoration: none;
@@ -24,11 +24,11 @@
 }
 
 .nav__link--active {
-  background-color: var(--color-white);
+  background-color: var(--color-gray-lightest);
   color: var(--color-dark);
 }
 
 .nav__link:hover {
-  background-color: var(--color-white);
+  background-color: var(--color-gray-lightest);
   color: var(--color-dark);
 }

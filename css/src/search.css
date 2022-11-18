@@ -10,9 +10,17 @@
   font-family: inherit;
   font-size: var(--fs-small);
   font-weight: var(--fw-light);
-  text-transform: uppercase;
+
   color: var(--color-white);
-  border: none;
+  border-color: var(--color-dark);
+  transition: boder 0.1s ease-in-out;
+}
+
+.search__button:hover,
+.search__button:focus {
+  cursor: pointer;
+  background-color: var(--color-white);
+  color: var(--color-dark);
 }
 
 .search__input {
@@ -20,4 +28,5 @@
   padding: 0.5em 1.25em;
   border: none;
   font: inherit;
+  border: 1px solid var(--color-lightest);
 }

@@ -9,6 +9,7 @@
 
       <img loading="lazy" src="/wp-content/themes/digatl-demo/images/atl00.jpg" class="card__image" />
       <div class="card__categories">
+        
         <?php the_category(" > "); ?>
       </div>
       <h3 class="card__title">
@@ -22,20 +23,20 @@
         consectetur adipisicing elit. Hic harum fugit pariatur.
       </p>
 
+      <a href="/" class="card__info-link" data-dialog="dialog01">Read More</a>
+      
+
 
       <div class="card__tags">
-
-      <?php the_tags("", ", ", ""); ?>
+      <?php the_tags(
+          '<img class="tags__image" src="/wp-content/themes/digatl-demo/images/tag.webp " alt=""> ',
+          ", ",
+          ""
+      ); ?>
       </div>
 
-
-      <div class="flow-content">
-        <a style="display: block;" href="/" class="card__resource-link">Visit Resource Online</a>
-
-        <button class="card__info-button" data-dialog="dialog01">
-          More Information
-        </button>
-      </div>
+        <a href="" class="card__resource-link button">Visit Resource</a>
+      
 
     </div>
 
