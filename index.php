@@ -5,25 +5,6 @@
 
   <div class="card-grid">
 
-
- <?php
- $temp = $wp_query;
- $wp_query = null;
- $wp_query = new WP_Query();
- $wp_query->query("showposts=2&post_type=resource" . "&paged=" . $paged);
- while ($wp_query->have_posts()):
-     $wp_query->the_post();
-     the_title();
-     echo "<br>";
- endwhile;
-
- previous_posts_link("NEW");
- next_posts_link("OLD");
-
- $wp_query = null;
- $wp_query = $temp;
- ?> 
-
     <?php
     $temp = $wp_query;
     $wp_query = null;
@@ -125,7 +106,7 @@
     ?>
   </div>
 
-  <div>
+  <nav style="display: flex; justify-content: flex-end;">
   <?php
   previous_posts_link("Previous");
   next_posts_link("Next");
