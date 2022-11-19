@@ -1,5 +1,3 @@
 # README
 
-## November 18, 2022
-
-- Update card styling
+This is a mockup of a digATL theme
