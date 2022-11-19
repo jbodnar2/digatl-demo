@@ -747,14 +747,17 @@ button {
 /* ----- dialog.css ----- */
 
 dialog::backdrop {
-  background-color: hsla(219, 43%, 12%, 1);
-  background-color: var(--color-dark);
-  opacity: 0.9;
   /* background-image: url("https://source.unsplash.com/random/?digital"); */
+  background-image: url("images/atlanta-made-header.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-blend-mode: overlay;
+
+  background-color: hsla(219, 43%, 12%, 1);
+
+  background-color: var(--color-dark);
+
+  background-blend-mode: soft-light;
 }
 
 .header {
