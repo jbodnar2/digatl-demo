@@ -5,13 +5,15 @@
   color: var(--color-white);
   text-shadow: 1px 2px 4px hsl(0 0% 0% / 0.25);
 
-  /* background-image: url("images/header.jpg"); */
   /* background-image: url("https://source.unsplash.com/random/1500x500/?digital"); */
-  background-image: url("https://source.unsplash.com/random/1200x600/?atlanta");
+  /* background-image: url("https://source.unsplash.com/random/1200x600/?atlanta"); */
+  /* background-image: url("images/header.jpg"); */
+  background-image: url("images/atlanta-made-header.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  /* filter: blur(3px); */
 
-  background-position: top left;
+  background-position: center center;
 
   background-color: var(--color-primary);
 

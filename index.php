@@ -21,8 +21,16 @@
                 get_post_meta($resource_id, "resource_url", true)
             );
 
-            $resource_creator = get_post_meta($resource_id, "creator", true);
-            $resource_format = get_post_meta($resource_id, "format", true);
+            $resource_creator = get_post_meta(
+                $resource_id,
+                "resource_creator",
+                true
+            );
+            $resource_format = get_post_meta(
+                $resource_id,
+                "resource_format",
+                true
+            );
 
             $resource_title = esc_attr(get_the_title());
             ?>
