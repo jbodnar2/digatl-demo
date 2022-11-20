@@ -61,13 +61,6 @@ function digatl_resource_default_metadata()
             true
         );
 
-        // add_post_meta(
-        //     get_the_ID(),
-        //     "resource_format",
-        //     "Please add the resource format",
-        //     true
-        // );
-
         add_post_meta(
             get_the_ID(),
             "resource_creator",
@@ -79,9 +72,9 @@ function digatl_resource_default_metadata()
 }
 
 // Register the resource_format taxonomy. Use hierarchical to allow checkbox format
-add_action("init", "register_resource_format_taxonomy");
+add_action("init", "register_resource_format_taxonomies");
 
-function register_resource_format_taxonomy()
+function register_resource_format_taxonomies()
 {
     $labels = [
         "name" => "Formats",
@@ -99,19 +92,51 @@ function register_resource_format_taxonomy()
 
     register_taxonomy("format", "resource", $settings);
 
-    wp_insert_term("ArcGIS StoryMap", "format");
-    wp_insert_term("Omeka Exhibit", "format");
-    wp_insert_term("ESRI StoryMap", "format");
-    wp_insert_term("Website", "format");
-    wp_insert_term("Various Media", "format");
-    wp_insert_term("ArcGIS Online", "format");
-    wp_insert_term("Digital Collection", "format");
+    $default_formats = [
+        "ArcGIS StoryMap",
+        "Omeka Exhibit",
+        "ESRI StoryMap",
+        "Website",
+        "Various Media",
+        "ArcGiS Online",
+        "Digital Collection",
+        "Matterport 3D Scans",
+        "360 Timelapse Video",
+    ];
 
-    wp_insert_term("Advocacy & Social Change", "category");
-    wp_insert_term("Environment & Health", "category");
-    wp_insert_term("History, Arts & Culture", "category");
-    wp_insert_term("Policy & Planning", "category");
+    foreach ($default_formats as $format) {
+        wp_insert_term($format, "format");
+    }
+
+    $default_categories = [
+        "Advocacy & Social Change",
+        "Environment & Health",
+        "History, Arts & Culture",
+        "Policy & Planning",
+    ];
+
+    foreach ($default_categories as $category) {
+        wp_insert_term($category, "category");
+    }
+
+    $default_tags = [
+        "Built Environment",
+        "Natural Environment",
+        "Education",
+        "Housing & Population",
+        "Goverment / State Government",
+        "Transportation",
+        "People",
+        "Uniquely ATL",
+    ];
+
+    foreach ($default_tags as $tag) {
+        wp_insert_term($tag, "post_tag");
+    }
 
     unset($labels);
     unset($settings);
+    unset($default_formats);
+    unset($default_categories);
+    unset($default_tags);
 }
