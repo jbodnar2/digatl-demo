@@ -16,8 +16,13 @@
   background-color: var(--color-white);
 }
 
-.card__title {
-  /* margin-top: var(--spacer-half); */
+.card__title__info-button {
+  all: inherit;
+
+  &:hover {
+    all: inherit;
+    cursor: pointer;
+  }
 }
 
 .card__image {

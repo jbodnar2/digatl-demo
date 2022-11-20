@@ -26,10 +26,11 @@
                 "resource_creator",
                 true
             );
-            $resource_format = get_post_meta(
-                $resource_id,
-                "resource_format",
-                true
+
+            $resource_formats_array = get_the_terms($resource_id, "format");
+            $resource_format = join(
+                ", ",
+                wp_list_pluck($resource_formats_array, "name")
             );
 
             $resource_title = esc_attr(get_the_title());
@@ -44,7 +45,9 @@
         </div>
         
         <h3 class="card__title">
-          <?php the_title(); ?>
+
+          <button class="card__title__info-button" data-dialog="dialog-<?= $resource_id ?>"> <?php the_title(); ?> </button>
+          
         </h3>
 
 
