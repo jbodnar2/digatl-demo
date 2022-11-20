@@ -32,3 +32,14 @@
   background-color: var(--color-gray-lightest);
   color: var(--color-dark);
 }
+
+.next-previous {
+  display: flex;
+
+  margin-top: 1rem;
+  justify-content: space-between;
+
+  & a {
+    color: var(--color-primary);
+  }
+}

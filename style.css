@@ -457,6 +457,18 @@ dialog {
   color: var(--color-dark);
 }
 
+.next-previous {
+  display: flex;
+
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+
+.next-previous a {
+    color: hsla(219, 100%, 33%, 1);
+    color: var(--color-primary);
+  }
+
 *,
 *::before,
 *::after {

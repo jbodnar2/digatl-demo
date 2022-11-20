@@ -68,12 +68,7 @@ add_action("wp_insert_post", "digatl_resource_default_metadata");
 function digatl_resource_default_metadata()
 {
     if ("resource" === get_post_type(get_the_ID())) {
-        add_post_meta(
-            get_the_ID(),
-            "resource_url",
-            "Please add the resource URL",
-            true
-        );
+        add_post_meta(get_the_ID(), "resource_url", esc_url("/"), true);
 
         add_post_meta(
             get_the_ID(),

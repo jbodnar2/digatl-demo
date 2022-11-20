@@ -127,17 +127,25 @@
     ?>
   </div>
 
-  <nav style="display: flex; justify-content: flex-end;">
-  <?php
-  previous_posts_link("Previous");
-  next_posts_link("Next");
+  <nav class="next-previous" aria-label="page navigation">
 
-  $wp_query = null;
-  $wp_query = $temp;
+    <div class="next-previous__previous">
+      <?php previous_posts_link("&larr; Previous Page"); ?>
+    </div>
+    
+    <div class="next-previous__next">
+      <?php
+      next_posts_link("Next Page &rarr;");
 
-  wp_reset_postdata();
-  ?>
-  </div>
+      $wp_query = null;
+      $wp_query = $temp;
+
+      wp_reset_postdata();
+      ?>
+    </div>
+
+  
+  </nav>
 
   
 
