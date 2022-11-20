@@ -12,3 +12,4 @@ To-do Items
 - TODO: Footer
 - TODO: Styling tweaks
 - TODO: Backgorund blur on background image
+- TODO: Modify editor, no access pages, post
