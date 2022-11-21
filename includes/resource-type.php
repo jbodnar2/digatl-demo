@@ -200,3 +200,16 @@ add_action("admin_menu", function () {
         remove_menu_page("edit-comments.php");
     }
 });
+
+add_filter("pre_get_posts", "digatl_add_resource_archives");
+
+function digatl_add_resource_archives($query)
+{
+    if (
+        is_category() ||
+        (is_tag() && empty($query->query_vars["suppress_filters"]))
+    ) {
+        $query->set("post_type", ["post", "nav_menu_item", "resource"]);
+        return $query;
+    }
+}
