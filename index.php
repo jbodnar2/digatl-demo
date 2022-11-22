@@ -5,15 +5,10 @@
 
   <div class="card-grid">
 
-    <?php
-    $temp = $wp_query;
-    $wp_query = null;
-    $wp_query = new WP_Query();
-    $wp_query->query("showposts=9&post_type=resource" . "&paged=" . $paged);
-    if ($wp_query->have_posts()):
-        while ($wp_query->have_posts()):
+    <?php if (have_posts()):
+        while (have_posts()):
 
-            $wp_query->the_post();
+            the_post();
 
             $resource_id = get_the_ID();
 
@@ -123,8 +118,7 @@
 
     <?php
         endwhile;
-    endif;
-    ?>
+    endif; ?>
   </div>
 
   <nav class="next-previous" aria-label="page navigation">
@@ -134,17 +128,8 @@
     </div>
     
     <div class="next-previous__next">
-      <?php
-      next_posts_link("Next Page &rarr;");
-
-      $wp_query = null;
-      $wp_query = $temp;
-
-      wp_reset_postdata();
-      ?>
+      <?php next_posts_link("Next Page &rarr;"); ?>
     </div>
-
-  
   </nav>
 
   

@@ -212,4 +212,9 @@ function digatl_add_resource_archives($query)
         $query->set("post_type", ["post", "nav_menu_item", "resource"]);
         return $query;
     }
+
+    if (is_home() && $query->is_main_query()) {
+        $query->set("post_type", ["resource"]);
+        return $query;
+    }
 }
