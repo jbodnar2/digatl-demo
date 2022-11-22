@@ -32,19 +32,37 @@
   <nav class="nav" aria-label="primary">
     <ul class="nav__list container">
       <li class="nav__list-item">
-        <a href="/" class="nav__link nav__link--active">All Resources</a>
+        <a href="/" class="nav__link <?= !is_category()
+            ? "nav__link--active"
+            : null ?>">All Resources</a>
       </li>
       <li class="nav__list-item">
-        <a href="/" class="nav__link">Advocacy & Social Change</a>
+        <a href="/category/advocacy-social-change/" class="nav__link <?= is_category(
+            "advocacy-social-change"
+        )
+            ? "nav__link--active"
+            : null ?>">Advocacy & Social Change</a>
       </li>
       <li class="nav__list-item">
-        <a href="/" class="nav__link">Environment & Health</a>
+        <a href="/category/environment-health/" class="nav__link <?= is_category(
+            "environment-health"
+        )
+            ? "nav__link--active"
+            : null ?>">Environment & Health</a>
       </li>
       <li class="nav__list-item">
-        <a href="/" class="nav__link">History, Arts & Culture</a>
+        <a href="/category/history-arts-culture/" class="nav__link <?= is_category(
+            "history-arts-culture"
+        )
+            ? "nav__link--active"
+            : null ?>">History, Arts & Culture</a>
       </li>
       <li class="nav__list-item">
-        <a href="/" class="nav__link">Policy & Planning</a>
+        <a href="/category/policy-planning/" class="nav__link <?= is_category(
+            "policy-planning"
+        )
+            ? "nav__link--active"
+            : null ?>">Policy & Planning</a>
       </li>
     </ul>
   </nav>
