@@ -68,16 +68,51 @@ add_action("wp_insert_post", "digatl_resource_default_metadata");
 function digatl_resource_default_metadata()
 {
     if ("resource" === get_post_type(get_the_ID())) {
-        add_post_meta(get_the_ID(), "resource_url", esc_url("/"), true);
+        $has_resource_url = !!get_post_meta(
+            get_the_ID(),
+            "resource_url",
+            "single"
+        );
 
-        add_post_meta(
+        $has_resource_creator = !!get_post_meta(
             get_the_ID(),
             "resource_creator",
-            "Please add the resource's creator",
-            true
+            "single"
         );
+
+        if (!$has_resource_url) {
+            add_post_meta(get_the_ID(), "resource_url", esc_url("/"), true);
+        }
+
+        if (!$has_resource_creator) {
+            add_post_meta(
+                get_the_ID(),
+                "resource_creator",
+                "No resource creator provided",
+                true
+            );
+        }
     }
     return true;
+}
+
+add_action("pre_post_update", "digatl_resource_validate_url");
+
+function digatl_resource_validate_url()
+{
+    if ("resource" === get_post_type(get_the_ID())) {
+        $resource_url = get_post_meta(get_the_ID(), "resource_url", true);
+
+        if ($resource_url) {
+            update_post_meta(
+                get_the_ID(),
+                "resource_url",
+                esc_url($resource_url)
+            );
+        } else {
+            add_post_meta(get_the_ID(), "resource_url", esc_url("/"), true);
+        }
+    }
 }
 
 // Register the resourse taxonomies: formats, categories, and tags.
@@ -111,6 +146,8 @@ function register_format_taxonomies()
         "Digital Collection",
         "Matterport 3D Scans",
         "360 Timelapse Video",
+        "Collection",
+        "Archival Collection",
     ];
 
     foreach ($default_formats as $format) {
@@ -133,7 +170,7 @@ function register_format_taxonomies()
         "Natural Environment",
         "Education",
         "Housing & Population",
-        "Goverment / State Government",
+        "Goverment/State Government",
         "Transportation",
         "People",
         "Uniquely ATL",
@@ -158,7 +195,13 @@ function modify_editor_administrator_caps()
     $administrator = get_role("administrator");
 
     // Issue: Seems also to disable ability to use tags, categories.
-    // $caps = ["edit_pages", "publish_pages", "edit_posts", "publish_posts"];
+    // $caps = [
+    //     "edit_pages",
+    //     "publish_pages",
+    // "edit_posts", // Remove edit_posts removes ability to assign cats, tags :-(
+    // "publish_posts", // Remove publish_posts removes ability to assign cats, tags :-(
+    // "manage_categories", // Remove manage_categories removes all access to cats, tags :-(
+    // ];
 
     // foreach ($caps as $cap) {
     //     $editor->remove_cap($cap);
@@ -181,6 +224,7 @@ function modify_editor_administrator_caps()
 }
 
 // Quick fix for removing posts, pages from editor screen
+add_action("admin_menu", "remove_editor_page_post_tools_comments_menus");
 function digatl_check_if_editor()
 {
     $user = wp_get_current_user();
@@ -191,7 +235,8 @@ function digatl_check_if_editor()
     return false;
 }
 
-add_action("admin_menu", function () {
+function remove_editor_page_post_tools_comments_menus()
+{
     $is_editor = digatl_check_if_editor();
     if ($is_editor) {
         remove_menu_page("edit.php");
@@ -199,7 +244,7 @@ add_action("admin_menu", function () {
         remove_menu_page("tools.php");
         remove_menu_page("edit-comments.php");
     }
-});
+}
 
 add_filter("pre_get_posts", "digatl_add_resource_archives");
 

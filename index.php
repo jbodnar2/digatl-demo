@@ -22,14 +22,6 @@
                 true
             );
 
-            // Simply comma separated text list?
-            // $resource_formats_array = get_the_terms($resource_id, "format");
-            // $resource_format = join(
-            //     ", ",
-            //     wp_list_pluck($resource_formats_array, "name")
-            // );
-
-            // Linked list?
             $resource_format = get_the_term_list(
                 $resource_id,
                 "format",
