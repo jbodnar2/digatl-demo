@@ -174,6 +174,7 @@ function register_format_taxonomies()
         "Transportation",
         "People",
         "Uniquely ATL",
+        "Project",
     ];
 
     foreach ($default_tags as $tag) {
