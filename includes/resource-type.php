@@ -148,6 +148,7 @@ function register_format_taxonomies()
         "360 Timelapse Video",
         "Collection",
         "Archival Collection",
+        "Blog",
     ];
 
     foreach ($default_formats as $format) {
