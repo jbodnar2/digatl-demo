@@ -1,5 +1,7 @@
 # README
 
+This is a demo wp theme for the digATL project used to help thinkn through design implementation and planning.
+
 ## Questions & Things to Ponder
 
 How might we design paging so that it's clear when one is moving through pages where one is at (which page of results) and how to get to end, beginning, etc?
