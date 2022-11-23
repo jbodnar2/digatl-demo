@@ -21,3 +21,7 @@ Are there other fields that Bryan might want that wouldn't fit into the general 
 Regarding the submission form in the document, it asks for a some things that aren't part of the prototype libguide display or recorded in other areas of the document for prelimiary items. Do we need that or is that just informational for Bryan?
 
 Does Bryan want a default image set for things if he doesn't supply one? does he have specific images we'd want to add to our theme content so that we can always get to it?
+
+What about the ScholarWorks feed in the libguide? Do we want to include that in the site somehow? It doesn't seem easily to fit into the general parameters of the request. Perhaps another top-level tab? Leave it off? A link somewhere else?
+
+Thoughts on the footer: Does Bryan want specific things in the site footer?
