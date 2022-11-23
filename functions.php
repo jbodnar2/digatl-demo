@@ -5,6 +5,8 @@ add_action("after_setup_theme", "digatl_theme_support");
 function digatl_theme_support()
 {
     add_theme_support("title-tag");
+
+    // Required for post-thumbs along with CPT suppport for it
     add_theme_support("post-thumbnails");
 }
 
@@ -29,5 +31,5 @@ function digatl_enqueue_scripts()
     );
 }
 
-// Mockup "Resource" Post Type
+// Mockup for CPT resource
 require_once get_stylesheet_directory() . "/includes/resource-type.php";

@@ -9,6 +9,7 @@ add_action("init", "register_resource_type");
 
 function register_resource_type()
 {
+    // Missing a few. Review full set of options.
     $labels = [
         "name" => "Resources",
         "all_items" => "All Resources",
@@ -26,6 +27,7 @@ function register_resource_type()
         "remove_featured_image" => "Remove Resource Image",
     ];
 
+    // Don't seem to be able to map "manage_categories" specifically for a CPT
     $capabilities = [
         "edit_post" => "edit_resource",
         "edit_posts" => "edit_resources",
@@ -34,8 +36,11 @@ function register_resource_type()
         "read_post" => "read_resource",
         "read_private_posts" => "read_private_resources",
         "delete_post" => "delete_resource",
+        // "manage_categories" => "manage_resource_categories",
     ];
 
+    // Note: thumbnail support is required along with theme support for post-thumbnails
+    // Note: map_meta_caps is required (true) in order to map capabilities
     $settings = [
         "supports" => [
             "editor",
@@ -63,6 +68,8 @@ function register_resource_type()
 }
 
 // Set up "default" custom fields/metadata on initial resource creation
+// On initial update, if editor ha sselected to display custmo fiels, the required custom fields will preopulate and show up.
+// This is just for demo purposes
 add_action("wp_insert_post", "digatl_resource_default_metadata");
 
 function digatl_resource_default_metadata()
@@ -96,6 +103,8 @@ function digatl_resource_default_metadata()
     return true;
 }
 
+// On updates to resource URL be sure to esc_url() any changes
+// Again, just for demo purposes
 add_action("pre_post_update", "digatl_resource_validate_url");
 
 function digatl_resource_validate_url()
@@ -116,6 +125,8 @@ function digatl_resource_validate_url()
 }
 
 // Register the resourse taxonomies: formats, categories, and tags.
+// Seems like "format" is best as a controlled vocab. Why not use a custom taxonomy for it?
+// ...also, seed taxonomies (categories, tags, and formats) with default terms
 add_action("init", "register_format_taxonomies");
 
 function register_format_taxonomies()
@@ -189,8 +200,10 @@ function register_format_taxonomies()
     unset($default_tags);
 }
 
+// All of this is likely unnecessary as by defaut editor and administrator will have the capabilities.
+// Disabling full-blown ability for editor to edit and publish posts also messed with ability to use/apply categories
+//...and tags so not doing it. Simply hiding menus seems like it might be enough.
 add_action("init", "modify_editor_administrator_caps");
-
 function modify_editor_administrator_caps()
 {
     $editor = get_role("editor");
@@ -226,7 +239,10 @@ function modify_editor_administrator_caps()
 }
 
 // Quick fix for removing posts, pages from editor screen
+// If removing abilities doesn't work, ust hide things is fine, I suppose.
 add_action("admin_menu", "remove_editor_page_post_tools_comments_menus");
+
+// Just a helper to check if user is editor.
 function digatl_check_if_editor()
 {
     $user = wp_get_current_user();
@@ -248,6 +264,8 @@ function remove_editor_page_post_tools_comments_menus()
     }
 }
 
+// WP doesn't assume you want CPTs in main query. So add the the resource CPT to the main query and to category, tags, etc
+// Not sure if this is too much or not enough.
 add_filter("pre_get_posts", "digatl_add_resource_archives");
 
 function digatl_add_resource_archives($query)
